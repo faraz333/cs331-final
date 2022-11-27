@@ -2,7 +2,8 @@ import os
 import sys
 import time
 
-_, term_width = os.popen('stty size', 'r').read().split()
+#_, term_width = os.popen('stty size', 'r').read().split()
+term_width=100
 term_width = int(term_width)
 
 TOTAL_BAR_LENGTH = 65.

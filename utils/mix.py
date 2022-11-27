@@ -1,6 +1,7 @@
 import numpy as np
 import torch
-
+DEVICE = torch.device("cpu")
+print(DEVICE)
 def rand_bbox(size, lam):
     W = size[2]
     H = size[3]
@@ -28,7 +29,7 @@ def mixup_data(x, y, args):
 
     batch_size = x.size()[0]
     
-    index = torch.randperm(batch_size).cuda()
+    index = torch.randperm(batch_size).to(DEVICE)
 
     mixed_x = lam * x + (1 - lam) * x[index, :]
     y_a, y_b = y, y[index]
@@ -43,7 +44,7 @@ def cutmix_data(x, y, args):
 
     batch_size = x.size()[0]
     
-    index = torch.randperm(batch_size).cuda()
+    index = torch.randperm(batch_size).to(DEVICE)
 
     y_a, y_b = y, y[index]
 

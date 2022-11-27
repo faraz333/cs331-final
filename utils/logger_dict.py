@@ -3,7 +3,7 @@ import csv
 from genericpath import exists
 import os
 
-from utils.print_progress import progress_bar
+#from utils.print_progress import progress_bar
 
 keys = ['T Loss', 'T Top-1', 'V Loss', 'V Top-1', 'ParameterScale']
 
